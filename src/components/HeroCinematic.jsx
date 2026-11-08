@@ -32,7 +32,7 @@ export default function HeroCinematic({ projectMeta }) {
           transition={{ duration: 0.6 }}
           className="flex flex-wrap items-center gap-3 mb-6"
         >
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#0E1524]/90 border border-cyan-500/30 text-cyan-300 text-xs font-mono backdrop-blur-xl shadow-glow-cyan">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#15182A]/90 border border-cyan-500/30 text-cyan-300 text-xs font-mono backdrop-blur-xl shadow-glow-cyan">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
             <span>SYSTEM ONLINE: 868 MHz LoRa LINK ACQUIRED</span>
           </div>
@@ -75,7 +75,7 @@ export default function HeroCinematic({ projectMeta }) {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-3">
-              <ShimmerButton href="#demo" shimmerColor="#22D3EE">
+              <ShimmerButton href="#demo" shimmerColor="#70F2CF">
                 <Activity className="w-4 h-4 text-cyan-300" />
                 <span>Test Live Road Simulator</span>
                 <ChevronRight className="w-4 h-4 text-white/70" />
@@ -125,13 +125,13 @@ export default function HeroCinematic({ projectMeta }) {
                 <svg viewBox="0 0 380 180" className="w-full h-44 overflow-visible">
                   <defs>
                     <linearGradient id="roadSurf" x1="0" y1="1" x2="0" y2="0">
-                      <stop offset="0%" stopColor="#121B30" />
-                      <stop offset="100%" stopColor="#0A0E1A" />
+                      <stop offset="0%" stopColor="#17172B" />
+                      <stop offset="100%" stopColor="#0B0D19" />
                     </linearGradient>
                     <linearGradient id="laserBeam" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#22D3EE" stopOpacity="0" />
-                      <stop offset="50%" stopColor="#22D3EE" stopOpacity="0.8" />
-                      <stop offset="100%" stopColor="#22D3EE" stopOpacity="0" />
+                      <stop offset="0%" stopColor="#70F2CF" stopOpacity="0" />
+                      <stop offset="50%" stopColor="#70F2CF" stopOpacity="0.8" />
+                      <stop offset="100%" stopColor="#70F2CF" stopOpacity="0" />
                     </linearGradient>
                   </defs>
 
@@ -146,7 +146,7 @@ export default function HeroCinematic({ projectMeta }) {
                   {/* Highway Lane Dividers with Animated Pulsing Glow */}
                   <line 
                     x1="190" y1="15" x2="190" y2="175" 
-                    stroke="#22D3EE" 
+                    stroke="#70F2CF" 
                     strokeWidth="2" 
                     strokeDasharray="8 8"
                     strokeOpacity="0.75"
@@ -158,11 +158,11 @@ export default function HeroCinematic({ projectMeta }) {
                   <line x1="255" y1="175" x2="210" y2="15" stroke="rgba(255,255,255,0.15)" strokeWidth="0.8" strokeDasharray="3 3" />
 
                   {/* Laser Scanning Horizon Bar */}
-                  <line x1="90" y1="95" x2="290" y2="95" stroke="#22D3EE" strokeWidth="1.5" strokeOpacity="0.6" className="animate-pulse" />
+                  <line x1="90" y1="95" x2="290" y2="95" stroke="#70F2CF" strokeWidth="1.5" strokeOpacity="0.6" className="animate-pulse" />
 
                   {/* Active Sensor Node #1 (Normal Road) */}
-                  <circle cx="170" cy="50" r="5" fill="#3B82F6" className="animate-ping" opacity="0.5" />
-                  <circle cx="170" cy="50" r="3.5" fill="#22D3EE" />
+                  <circle cx="170" cy="50" r="5" fill="#8B78F6" className="animate-ping" opacity="0.5" />
+                  <circle cx="170" cy="50" r="3.5" fill="#70F2CF" />
                   <text x="180" y="53" fill="#94A3B8" fontSize="8" fontFamily="monospace">
                     NODE-01 (1.02g)
                   </text>
@@ -181,9 +181,9 @@ export default function HeroCinematic({ projectMeta }) {
                   </g>
 
                   {/* Telemetry Wave packet travel animation */}
-                  <line x1="210" y1="130" x2="330" y2="40" stroke="#38BDF8" strokeWidth="1.5" strokeDasharray="4 4" strokeOpacity="0.8" />
-                  <circle cx="330" cy="40" r="4" fill="#38BDF8" />
-                  <text x="300" y="30" fill="#38BDF8" fontSize="8" fontFamily="monospace">
+                  <line x1="210" y1="130" x2="330" y2="40" stroke="#A78BFA" strokeWidth="1.5" strokeDasharray="4 4" strokeOpacity="0.8" />
+                  <circle cx="330" cy="40" r="4" fill="#A78BFA" />
+                  <text x="300" y="30" fill="#A78BFA" fontSize="8" fontFamily="monospace">
                     RF GATEWAY (868MHz)
                   </text>
                 </svg>
