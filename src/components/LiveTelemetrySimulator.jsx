@@ -130,7 +130,7 @@ export default function LiveTelemetrySimulator() {
   }, '');
 
   return (
-    <div className="relative rounded-2xl bg-[#0E1524]/70 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
+    <div className="relative rounded-2xl bg-[#15182A]/70 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
       <Spotlight className="from-blue-600/20 via-cyan-500/10 to-transparent" size={350} />
 
       <div className="flex flex-col lg:flex-row lg:items-center justify-between pb-6 border-b border-white/10 gap-4 relative z-10">
@@ -208,7 +208,7 @@ export default function LiveTelemetrySimulator() {
               <path
                 d={pathD}
                 fill="none"
-                stroke={selectedScenario.id === 'pothole' ? '#EF4444' : selectedScenario.id === 'moderate' ? '#F97316' : '#22D3EE'}
+                stroke={selectedScenario.id === 'pothole' ? '#EF4444' : selectedScenario.id === 'moderate' ? '#F97316' : '#70F2CF'}
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
