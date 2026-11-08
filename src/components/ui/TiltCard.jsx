@@ -6,7 +6,7 @@ export function TiltCard({
   children,
   className,
   tiltStrength = 12,
-  spotlightColor = 'rgba(34, 211, 238, 0.12)',
+  spotlightColor = 'rgba(112, 242, 207, 0.14)',
   ...props
 }) {
   const cardRef = useRef(null);
@@ -53,9 +53,9 @@ export function TiltCard({
       }}
       className={cn(
         'relative rounded-2xl p-6 transition-all duration-300',
-        'bg-[#0E1524]/75 border border-white/10 backdrop-blur-xl',
-        'shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]',
-        'hover:border-cyan-500/40 hover:shadow-[0_12px_40px_0_rgba(34,211,238,0.15)]',
+        'bg-[#15182A]/70 border border-white/10 backdrop-blur-xl',
+        'shadow-[0_18px_55px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.06)]',
+        'hover:border-[#70F2CF]/45 hover:shadow-[0_12px_40px_0_rgba(112,242,207,0.16)]',
         className
       )}
       {...props}
