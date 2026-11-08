@@ -5,7 +5,8 @@ import ArchitectureDiagram from './components/ArchitectureDiagram';
 import LiveTelemetrySimulator from './components/LiveTelemetrySimulator';
 import DynamicCalculator from './components/DynamicCalculator';
 import InteractiveRubricExplorer from './components/InteractiveRubricExplorer';
-import { Spotlight } from './components/ui/Spotlight';
+import { AmbientBackground } from './components/ui/AmbientBackground';
+import { TiltCard } from './components/ui/TiltCard';
 import { portfolioData } from './data/portfolioData';
 import { 
   Cpu, Users, Shield, Radio, Activity, Download, 
@@ -23,18 +24,16 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#080B12] text-[#F8FAFC] font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 relative overflow-x-hidden">
       
-      {/* Background Ambience & Grid */}
-      <div className="fixed inset-0 bg-grid-pattern opacity-60 pointer-events-none z-0" />
-      <div className="fixed top-0 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[160px] pointer-events-none z-0" />
-      <div className="fixed bottom-1/4 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[180px] pointer-events-none z-0" />
+      {/* Ambient Moving Glow & Animated Grid Background */}
+      <AmbientBackground />
 
-      {/* Navigation */}
+      {/* Floating Glass Navigation */}
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Cinematic Hero Section */}
       <HeroCinematic projectMeta={projectMeta} />
 
-      {/* Main Content Modules */}
+      {/* Main Engineering Modules */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-28 relative z-10">
 
         {/* 1. Live Interactive Simulator (Rubrics 17 & 02) */}
@@ -43,11 +42,11 @@ export default function App() {
             <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
               Simulation Lab
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-1">
               Real-Time Road Vibration Edge Classifier
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-              Experience the actual DSP thresholding algorithm embedded on our ESP32-S3 microcontroller.
+              Experience the actual DSP thresholding and spectral peak-extraction algorithm embedded on our ESP32-S3 microcontroller.
             </p>
           </div>
           <LiveTelemetrySimulator />
@@ -59,11 +58,11 @@ export default function App() {
             <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
               System Engineering
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-1">
               End-to-End Subsystem Architecture
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
-              Modular 4-tier pipeline spanning Edge MEMS sensing, Sub-GHz LoRa RF telemetry, cloud MQTT brokers, and spatial dispatch interfaces.
+              Modular 4-tier pipeline spanning Edge MEMS sensing, Sub-GHz LoRa RF telemetry, cloud MQTT brokers, and municipal spatial dispatch interfaces.
             </p>
           </div>
           <ArchitectureDiagram />
@@ -75,7 +74,7 @@ export default function App() {
             <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
               Physics & Energy Modeling
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-1">
               Quarter-Car Suspension Dynamics & Power Budget Lab
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
@@ -91,7 +90,7 @@ export default function App() {
             <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
               Comprehensive Evaluation Compliance
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-1">
               Interactive 18-Rubric Documentation Matrix
             </h2>
             <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-2xl">
@@ -107,19 +106,19 @@ export default function App() {
             <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
               Project Investigators
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-1">
               Engineering Team & Faculty Leadership
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {teamMembers.map((m) => (
-              <div 
+              <TiltCard 
                 key={m.usn} 
-                className="group relative p-6 rounded-2xl bg-[#0E1524]/70 border border-white/10 backdrop-blur-xl shadow-glass overflow-hidden hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between"
+                tiltStrength={8}
+                className="flex flex-col justify-between"
               >
-                <Spotlight className="from-cyan-500/15 to-transparent" size={180} />
-                <div className="relative z-10">
+                <div>
                   <div className="w-10 h-10 rounded-xl bg-linear-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-bold text-white text-sm shadow-glow-cyan mb-3">
                     {m.avatar}
                   </div>
@@ -127,15 +126,15 @@ export default function App() {
                   <span className="text-xs font-mono text-cyan-400 font-semibold block mt-0.5">{m.role}</span>
                   <span className="text-[11px] font-mono text-slate-400 block mt-1">USN: {m.usn}</span>
                 </div>
-                <div className="mt-4 pt-3 border-t border-white/10 relative z-10">
+                <div className="mt-4 pt-3 border-t border-white/10">
                   <span className="text-[11px] text-slate-300 italic block">"{m.contributions}"</span>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
 
           {/* Faculty Guide Card */}
-          <div className="mt-4 p-5 rounded-2xl bg-[#0E1524]/70 border border-white/10 backdrop-blur-xl shadow-glass flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-3">
+          <TiltCard tiltStrength={4} className="mt-4 p-5 flex flex-col sm:flex-row sm:items-center justify-between text-xs gap-3">
             <div className="flex items-center space-x-3.5">
               <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400">
                 <BookOpen className="w-5 h-5" />
@@ -147,7 +146,7 @@ export default function App() {
               </div>
             </div>
             <span className="font-mono text-cyan-400 sm:text-right">{facultyGuide.email}</span>
-          </div>
+          </TiltCard>
         </section>
 
         {/* 6. Deliverables & Reference Library (Rubric 18) */}
@@ -156,26 +155,26 @@ export default function App() {
             <span className="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider block">
               Project Deliverables
             </span>
-            <h2 className="text-2xl md:text-3xl font-extrabold text-white mt-1">
+            <h2 className="text-2xl md:text-4xl font-extrabold text-white mt-1">
               Technical Documentation & Reference Library
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {resources.slice(0, 3).map((res, i) => (
-              <div 
+              <TiltCard 
                 key={i} 
-                className="group relative p-6 rounded-2xl bg-[#0E1524]/70 border border-white/10 backdrop-blur-xl shadow-glass overflow-hidden hover:border-cyan-500/40 transition-all duration-300 flex flex-col justify-between"
+                tiltStrength={8}
+                className="flex flex-col justify-between"
               >
-                <Spotlight className="from-blue-500/15 to-transparent" size={200} />
-                <div className="relative z-10">
+                <div>
                   <span className="text-[10px] font-mono text-cyan-400 uppercase font-semibold block mb-1">
                     {res.category}
                   </span>
                   <h4 className="font-bold text-sm text-white">{res.title}</h4>
                   <p className="text-xs text-slate-400 mt-1 line-clamp-2">{res.description}</p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between relative z-10">
+                <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between">
                   <span className="text-[11px] font-mono text-slate-500">{res.fileSize || 'Online Resource'}</span>
                   <button
                     onClick={() => alert(`Starting download simulation: ${res.fileName || 'GitHub Repository'}`)}
@@ -185,15 +184,15 @@ export default function App() {
                     <span>Download</span>
                   </button>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </section>
 
       </main>
 
-      {/* Clean Modern Footer */}
-      <footer className="border-t border-white/10 bg-[#06080E] py-12 relative z-10">
+      {/* Clean Futuristic Footer */}
+      <footer className="border-t border-white/10 bg-[#06080E]/90 backdrop-blur-xl py-12 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex items-center space-x-2.5">
             <div className="w-7 h-7 rounded-lg bg-linear-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-glow-blue">
