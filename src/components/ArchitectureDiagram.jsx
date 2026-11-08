@@ -23,7 +23,7 @@ export default function ArchitectureDiagram() {
   };
 
   return (
-    <div className="relative rounded-2xl bg-[#0E1524]/75 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
+    <div className="relative rounded-2xl bg-[#15182A]/75 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
       
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between pb-6 border-b border-white/10 gap-4 relative z-10">
@@ -50,8 +50,8 @@ export default function ArchitectureDiagram() {
         <svg viewBox="0 0 900 48" className="w-full h-12 overflow-visible">
           <defs>
             <linearGradient id="busGrad" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#22D3EE" />
-              <stop offset="50%" stopColor="#3B82F6" />
+              <stop offset="0%" stopColor="#70F2CF" />
+              <stop offset="50%" stopColor="#8B78F6" />
               <stop offset="100%" stopColor="#818CF8" />
             </linearGradient>
             <filter id="glow-bus" x="-20%" y="-20%" width="140%" height="140%">
@@ -67,10 +67,10 @@ export default function ArchitectureDiagram() {
           <line x1="80" y1="24" x2="820" y2="24" stroke="url(#busGrad)" strokeWidth="2.5" strokeDasharray="6 6" filter="url(#glow-bus)" strokeOpacity="0.8" />
 
           {/* Moving Data Packets along the highway */}
-          <circle cx="200" cy="24" r="4.5" fill="#22D3EE" className="animate-ping" opacity="0.75" />
+          <circle cx="200" cy="24" r="4.5" fill="#70F2CF" className="animate-ping" opacity="0.75" />
           <circle cx="200" cy="24" r="3.5" fill="#FFFFFF" />
 
-          <circle cx="450" cy="24" r="4.5" fill="#3B82F6" className="animate-ping" opacity="0.75" />
+          <circle cx="450" cy="24" r="4.5" fill="#8B78F6" className="animate-ping" opacity="0.75" />
           <circle cx="450" cy="24" r="3.5" fill="#FFFFFF" />
 
           <circle cx="700" cy="24" r="4.5" fill="#818CF8" className="animate-ping" opacity="0.75" />

@@ -401,7 +401,7 @@ export default function InteractiveRubricExplorer() {
   };
 
   return (
-    <div className="relative rounded-2xl bg-[#0E1524]/70 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
+    <div className="relative rounded-2xl bg-[#15182A]/70 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
       <Spotlight className="from-cyan-500/15 via-blue-600/10 to-transparent" size={320} />
 
       {/* Category Pills (21st.dev style) */}

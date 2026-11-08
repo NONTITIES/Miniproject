@@ -57,7 +57,7 @@ export default function Navbar() {
     <>
       {/* Top Scroll Progress Indicator */}
       <div 
-        className="fixed top-0 left-0 h-[2px] bg-linear-to-r from-blue-500 via-cyan-400 to-indigo-500 z-50 transition-all duration-150"
+        className="fixed top-0 left-0 h-[2px] bg-linear-to-r from-[#6956C8] via-[#70F2CF] to-[#A78BFA] z-50 transition-all duration-150"
         style={{ width: `${scrollProgress}%` }}
       />
 
@@ -65,8 +65,8 @@ export default function Navbar() {
       <header className={`fixed top-3 inset-x-0 mx-auto max-w-7xl px-4 sm:px-6 z-40 transition-all duration-300`}>
         <div className={`rounded-2xl transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#0E1422]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.45)]' 
-            : 'bg-[#0E1422]/50 backdrop-blur-md border border-white/5'
+            ? 'bg-[#111426]/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.45)]' 
+            : 'bg-[#111426]/50 backdrop-blur-md border border-white/5'
         }`}>
           <div className="flex items-center justify-between h-14 px-4 sm:px-6">
             
@@ -75,21 +75,21 @@ export default function Navbar() {
               onClick={() => scrollTo('overview')} 
               className="flex items-center space-x-2.5 cursor-pointer group"
             >
-              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white shadow-glow-blue group-hover:scale-105 transition-transform">
+              <div className="w-8 h-8 rounded-lg bg-linear-to-br from-[#6956C8] to-[#42CFAE] flex items-center justify-center text-white shadow-glow-blue group-hover:scale-105 transition-transform">
                 <Cpu className="w-4 h-4" />
               </div>
               <div>
                 <span className="font-bold text-xs tracking-tight text-white block leading-none font-mono">
                   SMART ROAD
                 </span>
-                <span className="text-[10px] font-mono text-cyan-400 tracking-wider block mt-0.5">
+                <span className="text-[10px] font-mono text-[#70F2CF] tracking-wider block mt-0.5">
                   MONITORING SYSTEM
                 </span>
               </div>
             </div>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center space-x-1 bg-[#141B2A]/60 px-2 py-1 rounded-xl border border-white/5">
+            <nav className="hidden lg:flex items-center space-x-1 bg-[#1b1a31]/60 px-2 py-1 rounded-xl border border-white/5">
               {navItems.map((item) => {
                 const isActive = activeSection === item.id;
                 return (
@@ -98,7 +98,7 @@ export default function Navbar() {
                     onClick={() => scrollTo(item.id)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 relative ${
                       isActive
-                        ? 'text-cyan-400 font-semibold bg-white/10 shadow-xs'
+                        ? 'text-[#70F2CF] font-semibold bg-white/10 shadow-xs'
                         : 'text-slate-400 hover:text-white hover:bg-white/5'
                     }`}
                   >
@@ -124,7 +124,7 @@ export default function Navbar() {
               </a>
               <button
                 onClick={() => scrollTo('demo')}
-                className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-medium text-white bg-linear-to-r from-blue-600 to-cyan-600 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition shadow-glow-cyan"
+                className="inline-flex items-center space-x-1.5 px-3.5 py-1.5 text-xs font-medium text-white bg-linear-to-r from-blue-600 to-cyan-600 rounded-xl hover:from-blue-500 hover:to-cyan-500 transition shadow-[0_0_28px_rgba(112,242,207,0.18)]"
               >
                 <Activity className="w-3.5 h-3.5" />
                 <span>Test Sim</span>
@@ -147,14 +147,14 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden mt-2 p-3 bg-[#0E1422]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl space-y-1">
+          <div className="lg:hidden mt-2 p-3 bg-[#111426]/95 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl space-y-1">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollTo(item.id)}
                 className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-medium transition ${
                   activeSection === item.id 
-                    ? 'text-cyan-400 bg-white/10 font-semibold' 
+                    ? 'text-[#70F2CF] bg-white/10 font-semibold' 
                     : 'text-slate-300 hover:bg-white/5'
                 }`}
               >

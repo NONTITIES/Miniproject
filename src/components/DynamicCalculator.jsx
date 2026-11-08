@@ -30,7 +30,7 @@ export default function DynamicCalculator() {
   const badge = getSeverityBadge(parseFloat(peakG));
 
   return (
-    <div className="relative rounded-2xl bg-[#0E1524]/70 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
+    <div className="relative rounded-2xl bg-[#15182A]/70 border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-glass overflow-hidden">
       <Spotlight className="from-blue-600/20 via-cyan-500/10 to-transparent" size={320} />
 
       <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-3 relative z-10">
